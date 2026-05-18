@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani Whachal — Business Analyst & AI Automation Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --bg: #0a0a0f;
+  --surface: #111118;
+  --border: rgba(255,255,255,0.07);
+  --accent: #7c6ef7;
+  --accent2: #a78bfa;
+  --accent-glow: rgba(124,110,247,0.12);
+  --text: #e8e8f0;
+  --muted: #888899;
+  --muted2: #555566;
+  --green: #34d399;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 20px 64px;
+  background: rgba(10,10,15,0.88); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text); }
+.nav-name span { color: var(--accent2); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a { font-size: .78rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--accent); color: #fff; padding: 8px 20px; font-size: .75rem; font-weight: 600; text-decoration: none; border-radius: 6px; transition: opacity .2s; }
+.nav-cta:hover { opacity: .85; }
+
+/* HERO */
+#home {
+  min-height: 100vh; display: flex; align-items: center;
+  padding: 120px 64px 80px; position: relative; overflow: hidden;
+}
+#home::before {
+  content: ''; position: absolute; top: 10%; left: -15%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(124,110,247,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 820px; position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-glow); border: 1px solid rgba(124,110,247,0.25);
+  color: var(--accent2); padding: 6px 16px; border-radius: 100px;
+  font-size: .7rem; font-weight: 500; margin-bottom: 28px; letter-spacing: .5px;
+}
+.badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: blink 2s infinite; }
+.hero-hi { font-size: 1rem; color: var(--muted); margin-bottom: 10px; }
+.hero-name { font-family: 'Syne', sans-serif; font-size: clamp(3rem, 6.5vw, 6rem); font-weight: 800; line-height: .97; letter-spacing: -2px; margin-bottom: 14px; }
+.hero-name .acc { color: var(--accent2); }
+.hero-title { font-size: .95rem; color: var(--muted); margin-bottom: 36px; letter-spacing: .3px; }
+.hero-intro {
+  max-width: 660px; font-size: .92rem; line-height: 1.9; color: #9898b8; font-weight: 300;
+  border-left: 2px solid var(--accent); padding-left: 22px; margin-bottom: 40px;
+}
+.hero-intro p { margin-bottom: 12px; }
+.hero-intro p:last-child { margin-bottom: 0; }
+.hero-intro strong { color: var(--text); font-weight: 500; }
+.hero-actions { display: flex; gap: 12px; }
+.btn-main { background: var(--accent); color: #fff; padding: 12px 28px; font-size: .8rem; font-weight: 600; text-decoration: none; border-radius: 7px; transition: all .2s; }
+.btn-main:hover { background: var(--accent2); transform: translateY(-1px); }
+.btn-ghost { border: 1px solid var(--border); color: var(--muted); padding: 12px 28px; font-size: .8rem; font-weight: 500; text-decoration: none; border-radius: 7px; transition: all .2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--text); }
+.hero-photo { position: absolute; right: 64px; top: 50%; transform: translateY(-50%); width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top; border: 2px solid rgba(124,110,247,0.25); z-index: 1; }
+
+/* SECTIONS */
+section { padding: 96px 64px; }
+.sec-tag { font-size: .62rem; font-weight: 700; color: var(--accent2); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; }
+.divider { width: 40px; height: 2px; background: var(--accent); margin-bottom: 16px; border-radius: 2px; }
+.sec-title { font-family: 'Syne', sans-serif; font-size: clamp(1.7rem, 3vw, 2.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 48px; }
+
+/* EXPERIENCE */
+#experience { background: var(--surface); }
+.exp-wrap { max-width: 860px; display: flex; flex-direction: column; }
+.exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 0; padding-bottom: 52px; position: relative; }
+.exp-item:last-child { padding-bottom: 0; }
+.exp-item::before { content: ''; position: absolute; left: 180px; top: 8px; bottom: 0; width: 1px; background: var(--border); }
+.exp-item:last-child::before { display: none; }
+.exp-left { padding-right: 36px; padding-top: 2px; }
+.exp-right { padding-left: 36px; position: relative; }
+.exp-right::before { content: ''; position: absolute; left: -5px; top: 7px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg); }
+.exp-date { font-size: .65rem; color: var(--accent2); font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.exp-type { font-size: .62rem; color: var(--muted2); }
+.exp-co { font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 3px; }
+.exp-role { font-size: .78rem; color: var(--accent2); font-weight: 500; margin-bottom: 14px; }
+.exp-body { font-size: .83rem; line-height: 1.85; color: #8888a8; font-weight: 300; }
+.exp-body p { margin-bottom: 9px; }
+.exp-body p:last-child { margin-bottom: 0; }
+.exp-body strong { color: var(--text); font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.chip { font-size: .6rem; padding: 3px 10px; border-radius: 100px; border: 1px solid var(--border); color: var(--muted); }
+
+/* SKILLS */
+#skills {}
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 860px; }
+.sk-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 22px; transition: border-color .2s; }
+.sk-card:hover { border-color: rgba(124,110,247,0.28); }
+.sk-title { font-size: .6rem; font-weight: 700; color: var(--accent2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+.sk-list { display: flex; flex-direction: column; gap: 7px; }
+.sk-it { font-size: .8rem; color: #9090b0; padding-left: 13px; position: relative; }
+.sk-it::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-size: 1.1rem; top: -2px; }
+.sk-it.s { color: var(--text); font-weight: 500; }
+
+/* PROJECTS */
+#projects { background: var(--surface); }
+.proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 860px; }
+.proj-card { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 26px; transition: all .25s; position: relative; overflow: hidden; }
+.proj-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.proj-card:hover { border-color: rgba(124,110,247,0.22); transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,0,0,.4); }
+.proj-card:hover::after { transform: scaleX(1); }
+.proj-card.feat { border-color: rgba(124,110,247,0.18); background: rgba(124,110,247,0.03); }
+.proj-lbl { font-size: .58rem; color: var(--accent2); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 9px; font-weight: 600; }
+.proj-name { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 9px; }
+.proj-desc { font-size: .8rem; line-height: 1.78; color: #7878a0; font-weight: 300; margin-bottom: 14px; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.ptag { font-size: .58rem; padding: 3px 9px; border-radius: 100px; border: 1px solid var(--border); color: var(--muted2); }
+.proj-gh { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--accent2); text-decoration: none; margin-top: 10px; font-weight: 500; transition: gap .15s; }
+.proj-gh:hover { gap: 8px; }
+
+/* CONTACT */
+#contact { text-align: center; }
+.contact-wrap { max-width: 500px; margin: 0 auto; }
+.contact-sub { font-size: .88rem; line-height: 1.85; color: var(--muted); margin-bottom: 36px; }
+.contact-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+.cl { display: flex; align-items: center; gap: 9px; background: var(--surface); border: 1px solid var(--border); padding: 13px 22px; border-radius: 9px; font-size: .8rem; color: var(--text); text-decoration: none; font-weight: 500; transition: all .2s; }
+.cl:hover { border-color: var(--accent); color: var(--accent2); transform: translateY(-1px); }
+.cl svg { width: 17px; height: 17px; }
+
+/* FOOTER */
+footer { padding: 24px 64px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: .68rem; color: var(--muted2); }
+
+@keyframes blink { 0%,100%{opacity:1}50%{opacity:.2} }
+
+@media(max-width:900px){
+  nav{padding:16px 20px;}.nav-links{display:none;}
+  section{padding:72px 20px;}#home{padding:96px 20px 64px;}
+  .hero-photo{display:none;}
+  .exp-item{grid-template-columns:1fr;}.exp-item::before{display:none;}
+  .exp-left{padding-right:0;padding-bottom:8px;}.exp-right{padding-left:16px;}
+  .skills-grid{grid-template-columns:1fr 1fr;}.proj-grid{grid-template-columns:1fr;}
+  footer{padding:16px 20px;flex-direction:column;gap:6px;text-align:center;}
+}
+@media(max-width:540px){.skills-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-name">Shivani <span>Whachal</span></div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:shivaniwac@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="badge-dot"></span>Open to freelance & full-time · Delhi, India</div>
+    <p class="hero-hi">Hi, I'm</p>
+    <h1 class="hero-name">Shivani<br><span class="acc">Whachal.</span></h1>
+    <p class="hero-title">Business Analyst &amp; AI Automation Analyst</p>
+    <div class="hero-intro">
+      <p>I'm a Business Analyst who builds things that actually work — <strong>automated pipelines, reporting systems, and AI-powered workflows</strong> that help sales and ops teams make faster, smarter decisions.</p>
+      <p>I started with data — SQL queries, Power BI dashboards, Excel models. Then I got curious about automation. Then about AI. Now I sit at the intersection of all three, and that's exactly where I like to be.</p>
+      <p>At Spyne, I built an end-to-end <strong>call-scoring system using Claude API</strong> that went from raw transcript to scored insight with zero manual steps. I automated CRM workflows that used to eat hours every week. I built dashboards that sales leadership actually opens.</p>
+      <p>I'm not a data person who needs hand-holding through the business context. And I'm not a business person who waits for a data team to pull numbers. I do both — and I use AI to do it faster.</p>
+      <p>If you're building something at the edge of data, automation, and AI ops — <strong>let's talk.</strong></p>
+    </div>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-main">View My Work</a>
+      <a href="#contact" class="btn-ghost">Get in Touch</a>
+    </div>
+  </div>
+  <img src="https://images.codebasics.io/filters:format(webp)/fit-in/600x600/uploads/learner-portfolio/profile-images/265739/67dfef9aa6ee8/8af8ac1bd4.jpg" alt="Shivani Whachal" class="hero-photo">
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="sec-tag">Walk Through</div>
+  <div class="divider"></div>
+  <h2 class="sec-title">Experience & Education</h2>
+  <div class="exp-wrap">
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Apr 2025 – Present</div>
+        <div class="exp-type">Internship · Delhi</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-co">Spyne · B2B SaaS</div>
+        <div class="exp-role">Business Analyst Intern — Sales Ops</div>
+        <div class="exp-body">
+          <p>Built daily <strong>SDR reporting dashboards</strong> tracking rep activity, pipeline status, and performance KPIs — giving sales leadership a live view without manual effort.</p>
+          <p>Designed the <strong>Vini call workflow automation</strong> using n8n and Google Sheets — calls are automatically filtered, tagged, and surfaced for demo use in Canva presentations, saving the team <strong>5–6 hours per week</strong> that was previously spent manually reviewing recordings.</p>
+          <p>Built the <strong>Arali demo call analysis dashboard</strong> — ingesting raw call data and turning it into structured sales insights: talk time ratios, objection patterns, topic tracking, and rep coaching flags.</p>
+          <p>Developed an <strong>end-to-end call-scoring pipeline using the Claude API</strong> — raw transcript in, scored insight out, zero manual steps.</p>
+          <p>Managed <strong>HubSpot CRM</strong> — pipeline hygiene, lead tracking, lifecycle management, and workflow automation for the SDR team.</p>
+        </div>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">n8n</span>
+          <span class="chip">Claude API</span><span class="chip">Google Sheets</span>
+          <span class="chip">HubSpot CRM</span><span class="chip">Vercel</span><span class="chip">Excel VBA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">Aug 2024 – Mar 2025</div>
+        <div class="exp-type">Internship · Remote</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-co">MCline Studios</div>
+        <div class="exp-role">Research Analyst Intern</div>
+        <div class="exp-body">
+          <p>Evaluated data from <strong>10,000+ companies</strong> using Excel and Python, building structured B2B lead databases with verified contacts and outreach-ready segmentation.</p>
+          <p>Delivered segmented market reports contributing to a <strong>15% improvement in outreach efficiency</strong> for sales campaigns.</p>
+        </div>
+        <div class="chips">
+          <span class="chip">Excel</span><span class="chip">Python</span>
+          <span class="chip">Market Research</span><span class="chip">B2B Lead Intelligence</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2024</div>
+        <div class="exp-type">Freelance</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-co">Ruchika School, Bhubaneswar</div>
+        <div class="exp-role">Freelance Data Analyst</div>
+        <div class="exp-body">
+          <p>Analyzed <strong>15+ years of student performance data</strong> using Python and Excel — computed subject averages, top 5% benchmarks, and year-on-year trends to support academic planning decisions.</p>
+        </div>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">Excel</span><span class="chip">EDA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2024 – 2025</div>
+        <div class="exp-type">Certifications</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-co">CodeBasics & Coursera</div>
+        <div class="exp-role">Data Analytics & BI Training</div>
+        <div class="exp-body">
+          <p>Completed structured programs in data analytics, business intelligence, SQL, Python, and automation — building the technical foundation applied across all projects.</p>
+        </div>
+        <div class="chips">
+          <span class="chip">Data Analytics Bootcamp 4.0</span>
+          <span class="chip">SQL Beginner to Advanced</span>
+          <span class="chip">Python Beginner to Advanced</span>
+          <span class="chip">Power BI</span>
+          <span class="chip">Microsoft Fabric Mini</span>
+          <span class="chip">Google Data Analytics — Coursera</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-left">
+        <div class="exp-date">2019 – 2022</div>
+        <div class="exp-type">Education</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-co">Lady Shri Ram College, Delhi University</div>
+        <div class="exp-role">B.A. (Hons.) Economics</div>
+        <div class="exp-body">
+          <p>Three-year honours degree in Economics — built strong analytical thinking, research methodology, and quantitative reasoning that underpins all data and business work since.</p>
+        </div>
+        <div class="chips">
+          <span class="chip">Economics</span><span class="chip">Research Methods</span><span class="chip">Quantitative Analysis</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-tag">Capabilities</div>
+  <div class="divider"></div>
+  <h2 class="sec-title">Skills</h2>
+  <div class="skills-grid">
+    <div class="sk-card">
+      <div class="sk-title">Business & Reporting</div>
+      <div class="sk-list">
+        <span class="sk-it s">KPI Reporting & Dashboards</span>
+        <span class="sk-it s">Business Analysis</span>
+        <span class="sk-it s">MIS Reporting</span>
+        <span class="sk-it">Performance Tracking</span>
+        <span class="sk-it">Operational Analysis</span>
+        <span class="sk-it">Stakeholder Reporting</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-title">Data & Visualization</div>
+      <div class="sk-list">
+        <span class="sk-it s">SQL / MySQL</span>
+        <span class="sk-it s">Power BI (DAX)</span>
+        <span class="sk-it s">Excel Advanced & VBA</span>
+        <span class="sk-it s">Python (Pandas)</span>
+        <span class="sk-it">Microsoft Fabric</span>
+        <span class="sk-it">Data Cleaning & Validation</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-title">AI & Automation</div>
+      <div class="sk-list">
+        <span class="sk-it s">Claude API / Claude Code</span>
+        <span class="sk-it s">n8n</span>
+        <span class="sk-it s">Make.com</span>
+        <span class="sk-it">Zapier</span>
+        <span class="sk-it">Supabase</span>
+        <span class="sk-it">Vercel</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-title">CRM & Sales Ops</div>
+      <div class="sk-list">
+        <span class="sk-it s">HubSpot CRM</span>
+        <span class="sk-it s">CRM Workflow Automation</span>
+        <span class="sk-it">Lead Operations</span>
+        <span class="sk-it">Pipeline Analytics</span>
+        <span class="sk-it">SDR Ops</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-title">Tools & Platforms</div>
+      <div class="sk-list">
+        <span class="sk-it s">Google Sheets</span>
+        <span class="sk-it">Canva</span>
+        <span class="sk-it">GitHub</span>
+        <span class="sk-it">Jupyter Notebook</span>
+        <span class="sk-it">Vercel</span>
+      </div>
+    </div>
+    <div class="sk-card">
+      <div class="sk-title">Currently Learning</div>
+      <div class="sk-list">
+        <span class="sk-it s">Prompt Engineering</span>
+        <span class="sk-it s">n8n Advanced Workflows</span>
+        <span class="sk-it">ETL Pipeline Design</span>
+        <span class="sk-it">HubSpot API</span>
+        <span class="sk-it">Supabase as Data Layer</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="sec-tag">Work</div>
+  <div class="divider"></div>
+  <h2 class="sec-title">Projects</h2>
+  <div class="proj-grid">
+
+    <div class="proj-card feat">
+      <div class="proj-lbl">Spyne · AI · Automation</div>
+      <div class="proj-name">Vini Call Workflow Automation</div>
+      <div class="proj-desc">n8n + Google Sheets workflow that automatically filters, tags, and surfaces the right call recordings for demo presentations in Canva — saving 5–6 hours per week of manual review work.</div>
+      <div class="proj-tags"><span class="ptag">n8n</span><span class="ptag">Google Sheets</span><span class="ptag">Canva</span><span class="ptag">Automation</span></div>
+    </div>
+
+    <div class="proj-card feat">
+      <div class="proj-lbl">Spyne · Claude API · AI Ops</div>
+      <div class="proj-name">Claude API Call Scoring System</div>
+      <div class="proj-desc">End-to-end call-scoring pipeline using the Claude API — raw transcript in, structured scored insight out, zero manual steps. Surfaces coaching opportunities and performance flags for the sales team.</div>
+      <div class="proj-tags"><span class="ptag">Claude API</span><span class="ptag">Python</span><span class="ptag">n8n</span><span class="ptag">AI Automation</span></div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">Spyne · Dashboard · Sales Ops</div>
+      <div class="proj-name">Arali Demo Call Analysis Dashboard</div>
+      <div class="proj-desc">Ingests raw video call data and turns it into structured sales insights — talk time ratios, objection patterns, topic tracking, and rep coaching flags for the sales team.</div>
+      <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">SQL</span><span class="ptag">Excel</span><span class="ptag">Data Analysis</span></div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">Spyne · Reporting · Automation</div>
+      <div class="proj-name">SDR Reporting Workflow</div>
+      <div class="proj-desc">Automated the full SDR reporting chain — HubSpot to Power BI via SQL with n8n scheduling. Daily KPI dashboard with rep activity and pipeline metrics, zero manual effort.</div>
+      <div class="proj-tags"><span class="ptag">SQL</span><span class="ptag">Power BI</span><span class="ptag">n8n</span><span class="ptag">HubSpot</span></div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">Power BI · Sales Analytics</div>
+      <div class="proj-name">AtliQ Sales Insight</div>
+      <div class="proj-desc">Multi-year sales analysis identifying Amazon as top revenue driver, flagging underperforming markets for strategic re-allocation. Full SQL + Power BI pipeline.</div>
+      <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">SQL</span><span class="ptag">DAX</span></div>
+      <a href="https://github.com/shivaniwac/AtliqSales-Insight-Project" target="_blank" class="proj-gh">View on GitHub →</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">Power BI · Hospitality</div>
+      <div class="proj-name">Hospitality Performance Analytics</div>
+      <div class="proj-desc">Live Power BI dashboard with DAX measures for RevPAR, ADR, occupancy rate, and revenue. Drill-through filters and interactive slicers. Replaced 6 manual Excel reports.</div>
+      <div class="proj-tags"><span class="ptag">Power BI</span><span class="ptag">DAX</span><span class="ptag">Excel</span></div>
+      <a href="https://github.com/shivaniwac/Hospitality-Domain_PowerBi" target="_blank" class="proj-gh">View on GitHub →</a>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">Python · EDA · Freelance</div>
+      <div class="proj-name">Academic Performance Analytics</div>
+      <div class="proj-desc">15+ years of student data for Ruchika School analyzed using Python and Excel. Subject averages, top 5% benchmarks, and year-on-year trends for institutional planning.</div>
+      <div class="proj-tags"><span class="ptag">Python</span><span class="ptag">Pandas</span><span class="ptag">Excel</span><span class="ptag">EDA</span></div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-lbl">SQL · Workforce Analytics · Freelance</div>
+      <div class="proj-name">Workforce & Budget Analysis</div>
+      <div class="proj-desc">SQL-driven workforce report for Hubblemind — 2,500 employees, 10 departments. CTEs, window functions, and JOINs to surface headcount and budget allocation insights.</div>
+      <div class="proj-tags"><span class="ptag">SQL</span><span class="ptag">MySQL</span><span class="ptag">Data Analysis</span></div>
+    </div>
+
+  </div>
+  <p style="margin-top:24px;font-size:.72rem;color:var(--muted);">
+    More →
+    <a href="https://codebasics.io/portfolio/shivani-whachal" target="_blank" style="color:var(--accent2);text-decoration:none;margin-left:4px;">codebasics.io/portfolio</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/shivaniwac" target="_blank" style="color:var(--accent2);text-decoration:none;">github.com/shivaniwac</a>
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="sec-tag">Let's Talk</div>
+  <div class="divider"></div>
+  <h2 class="sec-title">Get In Touch</h2>
+  <div class="contact-wrap">
+    <p class="contact-sub">Open to freelance projects, full-time roles, and conversations about data, automation, and AI ops. Delhi-based, remote-ready.</p>
+    <div class="contact-links">
+      <a href="mailto:shivaniwac@gmail.com" class="cl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+        shivaniwac@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/shivaniwhachal24/" target="_blank" class="cl">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Shivani Whachal · Delhi, India</span>
+  <span>Business Analyst &amp; AI Automation Analyst</span>
+</footer>
+
+<script>
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 110) cur = s.id; });
+  navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? '#e8e8f0' : ''; });
+});
+</script>
+</body>
+</html>
