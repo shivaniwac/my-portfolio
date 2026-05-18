@@ -261,7 +261,7 @@ footer { padding: 24px 64px; border-top: 1px solid var(--border); display: flex;
 
     <div class="exp-item">
       <div class="exp-left">
-        <div class="exp-date">2024 – 2025</div>
+        <div class="exp-date">2023 – 2025</div>
         <div class="exp-type">Certifications</div>
       </div>
       <div class="exp-right">
