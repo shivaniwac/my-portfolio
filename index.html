@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivani Whachal — Business Analyst | CRM &amp; Workflow Automation</title>
+<meta name="theme-color" content="#F4EFE6">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN FOUNDATION
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* palette */
+  --paper: #F4EFE6;
+  --sand: #E2D7C7;
+  --ink: #302A25;
+  --umber: #98765B;
+  --umber-text: #7E6049;   /* darker umber for small text, AA contrast */
+  --olive: #A6A08F;
+  --stone: #D8D0C5;
+
+  --text-primary: var(--ink);
+  --text-secondary: #6F675F;
+  --text-muted: #6B6259;
+  --surface: #FBF8F2;
+  --surface-warm: #EEE6DA;
+  --dark-section: #302A25;
+  --dark-section-text: #F4EFE6;
+  --border: rgba(48, 42, 37, 0.14);
+  --border-strong: rgba(48, 42, 37, 0.24);
+
+  /* on dark */
+  --d-border: rgba(244, 239, 230, 0.16);
+  --d-border-strong: rgba(244, 239, 230, 0.30);
+  --d-text-secondary: rgba(244, 239, 230, 0.74);
+  --d-text-muted: rgba(244, 239, 230, 0.66);
+
+  /* type */
+  --serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* rhythm */
+  --gutter: clamp(20px, 6vw, 92px);
+  --maxw: 1240px;
+  --section-y: clamp(76px, 11vw, 140px);
+  --nav-h: 68px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--text-primary);
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.72;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+::selection { background: var(--sand); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--umber);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 200;
+  background: var(--ink); color: var(--paper);
+  padding: 12px 20px; font-size: .82rem; font-family: var(--mono);
+}
+.skip-link:focus { left: 0; }
+
+/* shared editorial primitives ------------------------------- */
+.section { padding-block: var(--section-y); }
+.section-head { margin-bottom: clamp(44px, 6vw, 76px); max-width: 760px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--umber-text);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.eyebrow::after {
+  content: '';
+  flex: 0 0 56px;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.section-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5.2vw, 3.9rem);
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 120;
+  background: rgba(244, 239, 230, 0.90);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  min-height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.32rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand span { font-style: italic; font-weight: 400; color: var(--umber-text); }
+
+.nav-menu { display: flex; align-items: center; gap: 34px; }
+.nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
+@media (max-width: 1180px) {
+  .nav-menu { gap: 24px; }
+  .nav-links { gap: 18px; }
+  .nav-links a { font-size: .78rem; }
+}
+.nav-links a {
+  font-size: .82rem;
+  letter-spacing: .01em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 6px 0;
+  position: relative;
+  transition: color .22s ease;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 1px; background: var(--umber);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .26s ease;
+}
+.nav-links a:hover { color: var(--ink); }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-links a[aria-current="true"] { color: var(--ink); }
+.nav-links a[aria-current="true"]::after { transform: scaleX(1); }
+
+.nav-cta {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 9px 18px;
+  border: 1px solid var(--border-strong);
+  transition: background .22s ease, border-color .22s ease;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--surface-warm); border-color: var(--ink); }
+
+.nav-toggle {
+  display: none;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: none;
+  border: 1px solid var(--border-strong);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+.nav-toggle:hover { background: var(--surface-warm); }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding-top: calc(var(--nav-h) + clamp(56px, 9vw, 112px));
+  padding-bottom: clamp(60px, 8vw, 104px);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 266px;
+  gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  color: var(--text-secondary);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 34px;
+}
+.badge-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--umber);
+  flex: 0 0 auto;
+}
+
+.hero-name {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(3.4rem, 10.5vw, 8.2rem);
+  line-height: .88;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  margin-bottom: 26px;
+}
+.hero-name .acc { font-style: italic; font-weight: 400; color: var(--umber-text); }
+
+.hero-title {
+  font-family: var(--mono);
+  font-size: .82rem;
+  letter-spacing: .04em;
+  color: var(--text-secondary);
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 34px;
+}
+
+.intro-block {
+  margin-top: clamp(64px, 8vw, 110px);
+  padding-top: clamp(40px, 5vw, 64px);
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+  gap: clamp(30px, 5vw, 80px);
+  align-items: start;
+}
+.intro-display {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  color: var(--ink);
+}
+.intro-lead {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.72rem);
+  font-weight: 500;
+  line-height: 1.42;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.intro-body {
+  max-width: 58ch;
+  font-size: 1rem;
+  line-height: 1.85;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+.intro-body p + p { margin-top: 14px; }
+
+
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; }
+
+.btn-main {
+  font-size: .85rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--ink);
+  padding: 13px 28px;
+  transition: background .22s ease;
+}
+.btn-main:hover { background: #443b32; }
+
+.link-quiet {
+  font-size: .85rem;
+  text-decoration: none;
+  color: var(--ink);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--border-strong);
+  transition: border-color .22s ease, color .22s ease;
+}
+.link-quiet:hover { color: var(--umber-text); border-color: var(--umber-text); }
+
+.link-meta {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--border);
+  transition: color .22s ease, border-color .22s ease;
+}
+.link-meta:hover { color: var(--umber-text); border-color: var(--umber-text); }
+
+/* portrait */
+.hero-portrait { padding-top: 10px; }
+.hero-photo {
+  width: 100%;
+  height: auto;
+  max-width: 266px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid var(--border-strong);
+  filter: saturate(.94);
+}
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.experience { background: var(--surface); border-block: 1px solid var(--border); }
+
+.entry {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 16px 56px;
+  padding-block: clamp(34px, 4vw, 48px);
+  border-top: 1px solid var(--border);
+}
+.entry:first-of-type { border-top: 2px solid var(--umber); }
+.entry:first-of-type .entry-date { color: var(--umber-text); }
+.entry:first-of-type .entry-co { font-size: clamp(1.75rem, 2.9vw, 2.4rem); }
+
+.entry-date {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.entry-type {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+}
+.entry-co {
+  font-family: var(--serif);
+  font-size: clamp(1.55rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.entry-role {
+  font-family: var(--mono);
+  font-size: .76rem;
+  letter-spacing: .03em;
+  color: var(--umber-text);
+  margin-bottom: 20px;
+}
+.entry-body {
+  max-width: 62ch;
+  font-size: .95rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--text-secondary);
+}
+.entry-body p + p { margin-top: 12px; }
+.entry-body strong { color: var(--ink); font-weight: 500; }
+
+.tags { display: flex; flex-wrap: wrap; align-items: baseline; margin-top: 20px; }
+.tag {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .03em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.tag:not(:last-child)::after {
+  content: '·';
+  margin: 0 10px;
+  color: var(--stone);
+}
+
+/* ============================================================
+   SKILLS
+   ============================================================ */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: clamp(32px, 5vw, 72px);
+  row-gap: clamp(36px, 4.5vw, 56px);
+}
+.skill-group { border-top: 1px solid var(--border-strong); padding-top: 20px; }
+.skill-group.is-building { border-top-color: var(--umber); }
+
+.skill-head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+  margin-bottom: 18px;
+}
+.skill-title {
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.skill-list { list-style: none; }
+.skill-list li {
+  font-size: .95rem;
+  font-weight: 300;
+  color: var(--text-secondary);
+  padding-block: 9px;
+  border-bottom: 1px solid var(--border);
+}
+.skill-list li.s { color: var(--ink); font-weight: 500; }
+.skill-mark {
+  font-family: var(--mono);
+  font-size: .68rem;
+  color: var(--umber-text);
+  margin-left: 6px;
+  vertical-align: 1px;
+}
+.skills-legend {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
+/* nested detail inside an experience page */
+.entry-now {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--umber-text);
+  margin-top: 14px;
+  padding-top: 9px;
+  border-top: 1px solid var(--umber);
+}
+.journey-line {
+  font-family: var(--mono);
+  font-size: .78rem;
+  letter-spacing: .02em;
+  color: var(--umber-text);
+  margin-bottom: 14px;
+}
+.entry-body .lbl {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-right: 6px;
+}
+.entry-body .lbl-row { margin-top: 12px; margin-bottom: 2px; }
+.entry-body .sub-title {
+  font-family: var(--mono);
+  font-size: .73rem;
+  font-weight: 500;
+  letter-spacing: .05em;
+  color: var(--ink);
+  margin-top: 18px;
+  margin-bottom: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.entry-body .kicker {
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+.entry-role .kicker {
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-left: 8px;
+}
+.entry-body ul { list-style: none; margin: 4px 0 0; }
+.entry-body li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 5px;
+  line-height: 1.68;
+}
+.entry-body li::before {
+  content: '';
+  position: absolute; left: 0; top: .72em;
+  width: 9px; height: 1px;
+  background: var(--olive);
+}
+.entry-body .result {
+  margin-top: 14px;
+  padding-left: 14px;
+  border-left: 2px solid var(--umber);
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* Spyne phase stack — click to step back through the roles */
+.phase-deck { position: relative; }
+.phase {
+  position: absolute; top: 0; left: 0; right: 0;
+  opacity: 0;
+  transform: perspective(1400px) rotateY(26deg) translateX(34px);
+  transform-origin: left center;
+  pointer-events: none;
+  transition: opacity .5s ease, transform .75s cubic-bezier(.26, .66, .3, 1);
+}
+.phase.is-active { opacity: 1; transform: none; pointer-events: auto; position: relative; }
+.phase-head {
+  display: flex; align-items: baseline; gap: 14px;
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.phase-tag { color: var(--umber-text); }
+.phase-date { color: var(--text-muted); }
+.phase-title {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  font-weight: 500;
+  line-height: 1.14;
+  color: var(--ink);
+  margin-bottom: 5px;
+}
+.entry-journey {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .02em;
+  color: var(--umber-text);
+  margin-bottom: 12px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border);
+}
+.phase-cycle {
+  display: block;
+  margin-top: 20px;
+  padding: 0;
+  background: none;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.phase-dots { display: flex; gap: 6px; margin-bottom: 8px; }
+.phase-dots i {
+  width: 18px; height: 2px;
+  background: var(--border-strong);
+  transition: background .35s ease, width .35s ease;
+}
+.phase-dots i.is-on { background: var(--umber); width: 30px; }
+.phase-cue {
+  display: block;
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color .25s ease;
+}
+.phase-cycle:hover .phase-cue { color: var(--umber-text); }
+
+@media (prefers-reduced-motion: reduce) {
+  .phase { transition: none; }
+}
+
+}
+
+/* ============================================================
+   CINEMA — one entry at a time, page-turn transitions
+   ============================================================ */
+.cinema { padding-block: 0; }
+.cinema .section-head { margin-bottom: clamp(30px, 4vw, 48px); }
+.is-cinema .section-head { margin-bottom: 16px; }
+.is-cinema .section-head .eyebrow { margin-bottom: 10px; }
+.is-cinema .section-title { font-size: clamp(1.8rem, 3.2vw, 2.5rem); }
+.is-cinema .cinema-rail { margin-bottom: 20px; }
+.cinema-track { padding-block: var(--section-y); }
+.cinema-cards { display: flex; flex-direction: column; }
+.cinema-rail { display: none; }
+.education { background: var(--surface); border-block: 1px solid var(--border); }
+.experience { background: var(--paper); border-block: none; }
+
+/* cinema mode (desktop, motion allowed) */
+.is-cinema .cinema-track { padding-block: 0; }
+.is-cinema .cinema-stage {
+  position: sticky; top: 0;
+  height: var(--stage-h, 100svh);
+  padding-top: calc(var(--nav-h) + 20px);
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.is-cinema .cinema-rail {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 30px;
+}
+.is-cinema .rail-dot {
+  width: 30px; height: 2px;
+  background: var(--border-strong);
+  transition: background .45s ease, width .45s ease;
+}
+.is-cinema .rail-dot.is-active { background: var(--umber); width: 52px; }
+
+.is-cinema .cinema-cards {
+  position: relative;
+  display: block;
+  perspective: 1500px;
+  perspective-origin: 30% 50%;
+}
+.is-cinema .cinema-card {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--umber);
+  padding: clamp(26px, 3vw, 40px) clamp(26px, 3.2vw, 44px);
+  box-shadow: 0 18px 50px -34px rgba(48, 42, 37, .5);
+  transform-origin: left center;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  transition: transform 1.05s cubic-bezier(.32, .72, .28, 1), opacity .6s ease;
+}
+.education .is-cinema .cinema-card,
+.education.is-cinema .cinema-card { background: var(--paper); }
+
+/* flow mode — used when a section's pages are too tall to pin */
+.cinema.is-flow .cinema-cards { display: flex; flex-direction: column; gap: 22px; }
+.cinema.is-flow .cinema-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--umber);
+  padding: clamp(24px, 3vw, 40px) clamp(24px, 3.2vw, 44px);
+  box-shadow: 0 18px 50px -34px rgba(48, 42, 37, .5);
+}
+.education.is-flow .cinema-card { background: var(--paper); }
+.js .cinema.is-flow .flow-reveal {
+  opacity: 0;
+  transform: perspective(1500px) rotateY(16deg) translateY(14px);
+  transform-origin: left center;
+}
+.js .cinema.is-flow .flow-reveal.is-visible {
+  opacity: 1;
+  transform: perspective(1500px) rotateY(0deg) translateY(0);
+  transition: opacity .75s ease, transform .9s cubic-bezier(.22, .61, .36, 1);
+}
+
+/* transient state used to measure the tallest page */
+.is-cinema.is-measuring .cinema-cards { min-height: 0 !important; }
+.is-cinema.is-measuring .cinema-card {
+  position: static !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* the page currently open */
+.is-cinema .cinema-card.is-active {
+  z-index: 4;
+  transform: none;
+  opacity: 1;
+}
+/* pages still to come — peeking out from under the open page */
+.is-cinema .cinema-card.is-stack-1 {
+  z-index: 3;
+  transform: translate(20px, 16px);
+  opacity: .85;
+  pointer-events: none;
+}
+.is-cinema .cinema-card.is-stack-2 {
+  z-index: 2;
+  transform: translate(40px, 32px);
+  opacity: .6;
+  pointer-events: none;
+}
+.is-cinema .cinema-card.is-next {
+  z-index: 1;
+  transform: translate(58px, 46px);
+  opacity: 0;
+  pointer-events: none;
+}
+/* pages already turned — swept away to the left */
+.is-cinema .cinema-card.is-past {
+  z-index: 5;
+  transform: rotateY(-118deg) translateZ(40px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.is-cinema .cinema-card .entry-co { font-size: clamp(1.5rem, 2.5vw, 2.1rem); margin-bottom: 5px; }
+@media (max-width: 1000px) {
+  .is-cinema .cinema-card { padding: 24px 26px; }
+  .is-cinema .cinema-card { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+}
+.is-cinema .cinema-card .entry-body { font-size: .9rem; line-height: 1.6; }
+.is-cinema .cinema-card .entry-body li { margin-bottom: 2px; line-height: 1.5; }
+.is-cinema .phase-title { font-size: 1.4rem; margin-bottom: 3px; }
+.is-cinema .phase-head { margin-bottom: 5px; }
+.is-cinema .phase .entry-role { margin-bottom: 10px; }
+.is-cinema .cinema-card .entry-body .sub-title { margin-top: 13px; padding-top: 9px; }
+.is-cinema .cinema-card .entry-role { margin-bottom: 14px; }
+
+@media (max-height: 780px) {
+  .is-cinema .cinema-card { padding: 20px 26px; }
+  .is-cinema .cinema-card .entry-co { font-size: 1.6rem; }
+  .is-cinema .cinema-card .entry-body { font-size: .88rem; line-height: 1.62; }
+  .is-cinema .cinema-card .entry-body p + p { margin-top: 8px; }
+  .is-cinema .cinema-card .tags { margin-top: 12px; }
+}
+
+/* scroll cue, shown on the first page only */
+.cinema-cue { display: none; }
+.is-cinema .cinema-cue {
+  display: flex; align-items: center; gap: 12px;
+  margin-top: 30px;
+  opacity: 1;
+  transition: opacity .6s ease;
+}
+.is-cinema .cinema-cue.is-hidden { opacity: 0; }
+.cue-rule {
+  width: 1px; height: 32px;
+  background: linear-gradient(to bottom, var(--umber), transparent);
+  animation: cue-drift 1.9s ease-in-out infinite;
+}
+.cue-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: var(--umber); opacity: .55;
+}
+@keyframes cue-drift {
+  0%, 100% { transform: translateY(0); opacity: .95; }
+  50% { transform: translateY(9px); opacity: .3; }
+}
+
+/* ============================================================
+   CERTIFICATES TIMELINE
+   ============================================================ */
+.certificates { background: var(--paper); }
+.certificates .cinema-card { background: var(--surface); }
+.timeline { list-style: none; position: relative; padding-left: 30px; }
+.timeline::before {
+  content: '';
+  position: absolute; left: 5px; top: 8px; bottom: 8px;
+  width: 1px; background: var(--border-strong);
+}
+.tl-item { position: relative; padding-bottom: clamp(26px, 3vw, 38px); }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: '';
+  position: absolute; left: -30px; top: 6px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--umber);
+  background: var(--paper);
+}
+.tl-item.is-group::before { background: var(--umber); }
+
+.tl-issuer {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--umber-text);
+  margin-bottom: 5px;
+}
+.tl-name {
+  font-family: var(--serif);
+  font-size: clamp(1.18rem, 1.9vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.26;
+  color: var(--ink);
+}
+.tl-link {
+  display: inline-block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-strong);
+  transition: color .22s ease, border-color .22s ease;
+}
+.tl-link:hover { color: var(--umber-text); border-color: var(--umber-text); }
+
+.tl-sub { list-style: none; margin-top: 16px; border-top: 1px solid var(--border); }
+.tl-sub li {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 18px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tl-sub .sub-name { font-size: .93rem; font-weight: 300; color: var(--text-secondary); }
+.tl-sub .sub-date {
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .06em;
+  color: var(--text-muted);
+  margin-left: 10px;
+  white-space: nowrap;
+}
+.tl-sub .tl-link { margin-top: 0; flex: 0 0 auto; }
+
+@media (max-width: 560px) {
+  .timeline { padding-left: 24px; }
+  .tl-item::before { left: -24px; }
+  .tl-sub li { flex-direction: column; gap: 4px; }
+}
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+.projects { background: var(--dark-section); color: var(--dark-section-text); }
+.projects .eyebrow { color: var(--sand); }
+.projects .eyebrow::after { background: var(--d-border-strong); }
+.projects .section-title { color: var(--dark-section-text); }
+.projects :focus-visible { outline-color: var(--sand); }
+
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(36px, 5vw, 72px);
+}
+.proj {
+  border-top: 1px solid var(--d-border);
+  padding-block: clamp(30px, 3.4vw, 42px);
+  display: flex;
+  flex-direction: column;
+}
+.proj.feat { border-top: 1px solid var(--d-border-strong); }
+
+.proj-lbl {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--olive);
+  margin-bottom: 14px;
+}
+.proj.feat .proj-lbl { color: var(--sand); }
+
+.proj-name {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.6vw, 2.15rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--dark-section-text);
+  margin-bottom: 14px;
+}
+.proj-desc {
+  font-size: .93rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--d-text-secondary);
+  max-width: 54ch;
+  margin-bottom: auto;
+}
+.proj .tags { margin-top: 20px; }
+.proj .tag { color: var(--d-text-muted); }
+.proj .tag:not(:last-child)::after { color: rgba(244, 239, 230, 0.32); }
+
+.proj-links { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 20px; }
+.proj-link {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  text-decoration: none;
+  color: var(--dark-section-text);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--d-border-strong);
+  transition: color .22s ease, border-color .22s ease;
+}
+.proj-link:hover { color: var(--sand); border-color: var(--sand); }
+
+.proj-source {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .08em;
+  color: var(--olive);
+  margin-top: 14px;
+}
+.proj-internal {
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .06em;
+  color: var(--d-text-muted);
+  margin-top: 20px;
+}
+
+.cb-note {
+  margin-top: clamp(40px, 5vw, 64px);
+  padding-top: 26px;
+  border-top: 1px solid var(--d-border);
+  font-size: .88rem;
+  font-weight: 300;
+  color: var(--d-text-secondary);
+  line-height: 1.9;
+}
+.cb-note a {
+  color: var(--dark-section-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--d-border-strong);
+  transition: color .22s ease, border-color .22s ease;
+}
+.cb-note a:hover { color: var(--sand); border-color: var(--sand); }
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact { background: var(--surface-warm); border-bottom: 1px solid var(--border); }
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(36px, 5vw, 80px);
+  align-items: start;
+}
+.contact-sub {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  font-weight: 300;
+  color: var(--text-secondary);
+  max-width: 46ch;
+}
+.contact-list { border-top: 1px solid var(--border-strong); }
+.contact-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 20px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--ink);
+  transition: color .22s ease;
+}
+.contact-row:hover { color: var(--umber-text); }
+.contact-row-v {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2.1vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.contact-row .arrow {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: .95rem;
+  color: var(--text-muted);
+  flex: 0 0 auto;
+  transition: transform .22s ease, color .22s ease;
+}
+.contact-row:hover .arrow { color: var(--umber-text); }
+.contact-row:hover .arrow { transform: translateX(3px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { padding-block: 28px; }
+.footer-inner {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .04em;
+  color: var(--text-muted);
+}
+
+/* whole-section page turn, for the sections after the pinned decks */
+.js .flip-in {
+  opacity: 0;
+  transform: perspective(1700px) rotateY(30deg) translateX(46px);
+  transform-origin: left center;
+}
+.js .flip-in.is-visible {
+  opacity: 1;
+  transform: perspective(1700px) rotateY(0deg) translateX(0);
+  transition: opacity .85s ease, transform 1.05s cubic-bezier(.26, .66, .3, 1);
+}
+
+/* ============================================================
+   MOTION
+   ============================================================ */
+.js .reveal {
+  opacity: 0;
+  transform: perspective(1500px) rotateY(18deg) translateY(12px);
+  transform-origin: left center;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: perspective(1500px) rotateY(0deg) translateY(0);
+  transition: opacity .75s ease, transform .85s cubic-bezier(.22, .61, .36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1 !important; transform: none !important; }
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1080px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr) 210px; }
+  .hero-photo { max-width: 210px; }
+  .entry { grid-template-columns: 170px minmax(0, 1fr); gap: 16px 40px; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .cinema.is-flow .cinema-cards { gap: 16px; }
+  .cinema.is-flow .cinema-card { padding: 22px 20px; }
+}
+
+@media (max-width: 900px) {
+  :root { --nav-h: 62px; }
+
+  .nav-toggle { display: inline-block; }
+  .nav-menu {
+    position: absolute; left: 0; right: 0; top: 100%;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    padding: 4px var(--gutter) 22px;
+    display: none;
+  }
+  .nav-menu.is-open { display: flex; }
+  .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
+  .nav-links a {
+    display: block;
+    padding: 15px 0;
+    font-size: .95rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-links a::after { display: none; }
+  .nav-links a[aria-current="true"] { color: var(--umber-text); }
+  .nav-cta { margin-top: 18px; text-align: center; }
+
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .intro-block { grid-template-columns: minmax(0, 1fr); }
+  .hero-portrait { order: -1; padding-top: 0; }
+  .hero-photo { max-width: 176px; }
+
+
+  .entry { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+
+  .proj-grid { grid-template-columns: minmax(0, 1fr); }
+  .contact-grid { grid-template-columns: minmax(0, 1fr); }
+  .footer-inner { flex-direction: column; text-align: center; gap: 6px; }
+}
+
+@media (max-width: 560px) {
+  .skills-grid { grid-template-columns: minmax(0, 1fr); }
+  .hero-actions { gap: 16px 22px; }
+  .btn-main { width: 100%; text-align: center; }
+  .contact-row-v { font-size: 1.12rem; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#home">Skip to content</a>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">Shivani <span>Whachal</span></a>
+    <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button>
+    <div class="nav-menu" id="site-menu">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="mailto:shivaniwac@gmail.com" class="nav-cta">Hire Me</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <div class="container hero-grid">
+    <div class="hero-main">
+      <p class="hero-badge"><span class="badge-dot" aria-hidden="true"></span>Open to full-time roles &amp; Freelance · Delhi, India</p>
+      <h1 class="hero-name">Shivani<br><span class="acc">Whachal.</span></h1>
+      <p class="hero-title">Business Analyst | CRM &amp; Workflow Automation | API Integrations</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-main">View My Work</a>
+        <a href="#contact" class="link-quiet">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="portrait.jpg" alt="Shivani Whachal" class="hero-photo" width="640" height="800">
+    </div>
+  </div>
+
+  <div class="container intro-block reveal">
+    <p class="intro-display">Welcome to my world.</p>
+    <div class="intro-body">
+      <p class="intro-lead">Drawn to stories, driven by logic, and endlessly curious about how things work.</p>
+      <p>I'm someone who enjoys understanding how things work, questioning how they could work better, and exploring ideas beyond what I already know.</p>
+      <p>My journey started with data, but it has grown into something broader. I enjoy connecting data, technology, automation, and business thinking to solve problems and simplify the way people work.</p>
+      <p>I'm a quick learner, an adaptable thinker, and someone who is always looking for the next thing to understand, experiment with, or build.</p>
+      <p>I don't fit neatly into one box, and I don't intend to. I'm here to keep exploring, learning, and turning ideas into something useful.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="section experience cinema" data-cinema>
+  <div class="cinema-track">
+    <div class="cinema-stage">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Journey</p>
+          <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="cinema-rail" aria-hidden="true">
+          <span class="rail-dot"></span>
+          <span class="rail-dot"></span>
+          <span class="rail-dot"></span>
+        </div>
+        <div class="cinema-cards">
+      <article class="entry cinema-card spyne-card" data-phases>
+        <div class="entry-meta">
+          <div class="entry-date">May 2025 – Present</div>
+          <div class="entry-type">Spyne · B2B SaaS</div>
+          <div class="entry-now">Current</div>
+          <button class="phase-cycle" type="button" aria-label="Show the previous phase">
+            <span class="phase-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></span>
+            <span class="phase-cue">Click to step back</span>
+          </button>
+        </div>
+        <div class="entry-main">
+          <h3 class="entry-co">Spyne</h3>
+          <p class="entry-journey">Data Analytics → Marketing &amp; Growth → CEO's Office</p>
+          <div class="phase-deck">
+            <div class="phase is-active">
+              <p class="phase-head"><span class="phase-tag">Phase 03</span><span class="phase-date">September 2026 – Present</span></p>
+              <h4 class="phase-title">Business Analyst | CEO&#39;s Office</h4>
+              <p class="entry-role">Customer Intelligence &amp; Business Operations</p>
+              <div class="entry-body">
+                <p><span class="lbl">What:</span> Supporting leadership with customer intelligence, business performance reporting, and operational KPI visibility to improve customer lifecycle understanding and business planning.</p>
+            <ul>
+              <li><strong>Customer intelligence &amp; churn analysis</strong> — customer behaviour, account performance and retention patterns; surfacing recurring issues and the friction behind churn.</li>
+              <li><strong>Business performance &amp; KPI reporting</strong> — Customer Success KPIs across customer lifecycle and deployment, tracking <strong>Contracted (CARR)</strong> and <strong>Live (LARR)</strong> Annual Recurring Revenue.</li>
+              <li><strong>Customer visit &amp; meeting intelligence application</strong> <span class="kicker">Built a working application</span> — centralizes which customers were visited, meeting details and discussion outcomes.</li>
+            </ul>
+            <p class="result"><span class="lbl">Result:</span> Structured customer visit information and clearer visibility into customer-facing activities for leadership reviews.</p>
+              </div>
+            </div>
+            <div class="phase">
+              <p class="phase-head"><span class="phase-tag">Phase 02</span><span class="phase-date">November 2025 – August 2026</span></p>
+              <h4 class="phase-title">Data Analyst | Full-time</h4>
+              <p class="entry-role">Marketing Analytics, Growth &amp; Automation</p>
+              <div class="entry-body">
+                <ul>
+              <li><strong>Demand generation analytics</strong> — leads, MQLs, pipeline and ARR; keyword research, Google Ads, SEO and AEO.</li>
+              <li><strong>Marketing attribution dashboard</strong> <span class="kicker">Built end-to-end</span> — frontend, HubSpot integrations and automated recurring reporting.</li>
+              <li><strong>AI sales call analysis | Vini AI</strong> — n8n, Docker and Claude API turning calls into structured insight. <strong>5–6 hours saved weekly</strong>.</li>
+              <li><strong>Competitive intelligence</strong> — battlecards across Impel, Toma, Podium, Numa, DriveCentric and Matador, plus enablement playbooks.</li>
+              <li><strong>Design request &amp; capacity system</strong> — request lifecycle tracking with workload and bandwidth visibility.</li>
+            </ul>
+            <p class="result"><span class="lbl">Result:</span> Replaced manual reporting with centralized marketing intelligence and creative ops systems.</p>
+              </div>
+            </div>
+            <div class="phase">
+              <p class="phase-head"><span class="phase-tag">Phase 01</span><span class="phase-date">May 2025 – October 2025</span></p>
+              <h4 class="phase-title">Data Analyst Intern</h4>
+              <p class="entry-role">CRM Operations &amp; Sales Intelligence</p>
+              <div class="entry-body">
+                <p><span class="lbl">What:</span> Improved CRM data quality and sales intelligence by organizing, enriching, and maintaining prospect information for outbound sales operations.</p>
+            <ul>
+              <li>Managed and maintained <strong>HubSpot CRM</strong> records — data accuracy, consistency, and standardization.</li>
+              <li>Researched and enriched company and contact information to improve prospect data completeness.</li>
+              <li>Cleaned, validated, and structured lead records to minimize duplicates and incomplete information.</li>
+              <li>Prepared enriched prospect databases and sales-facing views so SDRs could prioritize outreach with less manual research.</li>
+              <li>Configured <strong>HubSpot lead-routing workflows</strong> on lead scores and lead attributes — including a <strong>75+ score threshold</strong> — and automated daily and weekly reporting.</li>
+              <li>Supported CRM reporting and lead tracking to improve visibility into sales activities.</li>
+            </ul>
+            <p class="result"><span class="lbl">Result:</span> A more reliable CRM data foundation, reduced repetitive prospect research, and more accessible sales intelligence for outbound teams.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry cinema-card">
+        <div class="entry-meta">
+          <div class="entry-date">August 2024 – March 2025</div>
+          <div class="entry-type">Internship</div>
+        </div>
+        <div class="entry-main">
+          <h3 class="entry-co">McLine Studios</h3>
+          <p class="entry-role">Research Analyst Intern — Research, Data Enrichment &amp; Sales Intelligence</p>
+          <div class="entry-body">
+            <p><span class="lbl">What:</span> Supported sales operations through structured market research, company data extraction, and prospect enrichment, helping SDRs identify and prioritize relevant businesses for outbound outreach.</p>
+            <ul>
+              <li>Researched and analyzed <strong>10,000+ company records</strong> to identify relevant business prospects.</li>
+              <li>Used <strong>Excel and Python</strong> to collect, clean, organize, and structure company-level information.</li>
+              <li>Conducted company research and data enrichment to improve prospect database completeness.</li>
+              <li>Maintained standardized prospect databases and structured prospect lists so SDRs could prioritize outreach.</li>
+            </ul>
+            <p class="result"><span class="lbl">Result:</span> Analyzed 10,000+ company records and contributed to more efficient prospect research, data accessibility, and SDR outreach preparation.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="entry cinema-card">
+        <div class="entry-meta">
+          <div class="entry-date">2024</div>
+          <div class="entry-type">Independent</div>
+        </div>
+        <div class="entry-main">
+          <h3 class="entry-co">Independent Projects &amp; Additional Experience</h3>
+          <p class="entry-role">Freelance | AI Automation &amp; Data Solutions <span class="kicker">December 2024</span></p>
+          <div class="entry-body">
+            <ul>
+              <li>Developed automation workflows to reduce repetitive business processes.</li>
+              <li>Worked on AI-powered solutions for sales-call analysis and business operations.</li>
+              <li>Built dashboards and data-driven tools to improve reporting and operational visibility.</li>
+              <li>Explored integrations across APIs, databases, and automation platforms.</li>
+            </ul>
+            <p class="sub-title">Hubblemind | SQL Intern <span class="kicker">September 2024</span></p>
+            <ul>
+              <li>Worked with SQL queries for structured data retrieval and analysis, database operations, and data manipulation.</li>
+              <li>Developed foundational experience in working with relational databases.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+        </div>
+        <div class="cinema-cue" aria-hidden="true"><span class="cue-rule"></span><span class="cue-dot"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="section education cinema" data-cinema>
+  <div class="cinema-track">
+    <div class="cinema-stage">
+      <div class="container">
+        <div class="section-head reveal flip-in">
+          <p class="eyebrow">Journey</p>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="cinema-rail" aria-hidden="true">
+          <span class="rail-dot"></span>
+          <span class="rail-dot"></span>
+        </div>
+        <div class="cinema-cards">
+          <article class="entry cinema-card">
+            <div class="entry-meta">
+              <div class="entry-date">2019–2022</div>
+              <div class="entry-type">Education</div>
+            </div>
+            <div class="entry-main">
+              <h3 class="entry-co">Lady Shri Ram College, Delhi University</h3>
+              <p class="entry-role">B.A. (Hons.) Sanskrit</p>
+            </div>
+          </article>
+          <article class="entry cinema-card">
+            <div class="entry-meta">
+              <div class="entry-date">CBSE</div>
+              <div class="entry-type">Schooling</div>
+            </div>
+            <div class="entry-main">
+              <h3 class="entry-co">Moti Ram Memorial Girls Sr. Sec. School</h3>
+              <p class="entry-role">Arts with Economics · Class XII</p>
+            </div>
+          </article>
+        </div>
+        <div class="cinema-cue" aria-hidden="true"><span class="cue-rule"></span><span class="cue-dot"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates" class="section certificates cinema" data-cinema>
+  <div class="cinema-track">
+    <div class="cinema-stage">
+      <div class="container">
+        <div class="section-head reveal flip-in">
+          <p class="eyebrow">Journey</p>
+          <h2 class="section-title">Certificates</h2>
+        </div>
+        <div class="cinema-rail" aria-hidden="true">
+          <span class="rail-dot"></span>
+          <span class="rail-dot"></span>
+          <span class="rail-dot"></span>
+        </div>
+        <div class="cinema-cards">
+          <article class="entry cinema-card">
+            <div class="entry-meta">
+              <div class="entry-date">2025</div>
+              <div class="entry-type">Certifications</div>
+            </div>
+            <div class="entry-main">
+              <h3 class="entry-co">CodeBasics</h3>
+              <p class="entry-role">Data Analytics &amp; Business Intelligence</p>
+              <ul class="tl-sub">
+              <li>
+                <span class="sub-name">Microsoft Fabric Mini: For Data Analysts<span class="sub-date">Apr 10, 2025</span></span>
+                <a class="tl-link" href="certificates/microsoft-fabric-mini-for-data-analysts.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">SQL Beginner to Advanced For Data Professionals<span class="sub-date">Mar 31, 2025</span></span>
+                <a class="tl-link" href="certificates/sql-beginner-to-advanced.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Get Job Ready: Power BI Data Analytics for All Levels 3.0<span class="sub-date">Mar 21, 2025</span></span>
+                <a class="tl-link" href="certificates/power-bi-data-analytics-all-levels-3.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Excel: Mother of Business Intelligence<span class="sub-date">Jan 20, 2025</span></span>
+                <a class="tl-link" href="certificates/excel-mother-of-business-intelligence.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry cinema-card">
+            <div class="entry-meta">
+              <div class="entry-date">Apr 19, 2024</div>
+              <div class="entry-type">Professional Certificate</div>
+            </div>
+            <div class="entry-main">
+              <h3 class="entry-co">Google Data Analytics</h3>
+              <p class="entry-role">Google · Coursera · 8 courses
+                <a class="tl-link" href="certificates/google-data-analytics-professional-certificate.pdf" target="_blank" rel="noopener noreferrer">View certificate ↗</a>
+              </p>
+              <ul class="tl-sub">
+              <li>
+                <span class="sub-name">Foundations: Data, Data, Everywhere<span class="sub-date">Mar 19, 2024</span></span>
+                <a class="tl-link" href="certificates/foundations-data-data-everywhere.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Ask Questions to Make Data-Driven Decisions<span class="sub-date">Mar 2, 2024</span></span>
+                <a class="tl-link" href="certificates/ask-questions-to-make-data-driven-decisions.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Prepare Data for Exploration<span class="sub-date">Mar 7, 2024</span></span>
+                <a class="tl-link" href="certificates/prepare-data-for-exploration.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Process Data from Dirty to Clean<span class="sub-date">Mar 10, 2024</span></span>
+                <a class="tl-link" href="certificates/process-data-from-dirty-to-clean.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Analyze Data to Answer Questions<span class="sub-date">Mar 15, 2024</span></span>
+                <a class="tl-link" href="certificates/analyze-data-to-answer-questions.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Share Data Through the Art of Visualization<span class="sub-date">Mar 22, 2024</span></span>
+                <a class="tl-link" href="certificates/share-data-through-the-art-of-visualization.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Data Analysis with R Programming<span class="sub-date">Apr 1, 2024</span></span>
+                <a class="tl-link" href="certificates/data-analysis-with-r-programming.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              <li>
+                <span class="sub-name">Google Data Analytics Capstone: Complete a Case Study<span class="sub-date">Apr 19, 2024</span></span>
+                <a class="tl-link" href="certificates/google-data-analytics-capstone.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry cinema-card">
+            <div class="entry-meta">
+              <div class="entry-date">Nov 7, 2023</div>
+              <div class="entry-type">Certification</div>
+            </div>
+            <div class="entry-main">
+              <h3 class="entry-co">Complete Python Developer</h3>
+              <p class="entry-role">Udemy · Zero to Mastery</p>
+              <ul class="tl-sub">
+              <li>
+                <span class="sub-name">Complete Python Developer in 2023: Zero to Mastery<span class="sub-date">31 hours</span></span>
+                <a class="tl-link" href="certificates/complete-python-developer-zero-to-mastery.pdf" target="_blank" rel="noopener noreferrer">View ↗</a>
+              </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <div class="cinema-cue" aria-hidden="true"><span class="cue-rule"></span><span class="cue-dot"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-head reveal flip-in">
+      <p class="eyebrow">Capabilities</p>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid reveal flip-in">
+      <div class="skill-group reveal">
+        <div class="skill-head"><h3 class="skill-title">RevOps &amp; GTM Systems</h3></div>
+        <ul class="skill-list">
+          <li class="s">Revenue Operations</li>
+          <li class="s is-proven">HubSpot CRM <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Lead Lifecycle Management <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Lead Scoring &amp; Routing <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">CRM Data Enrichment <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Inbound/Outbound Operations <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Marketing Attribution <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Pipeline &amp; Funnel Analytics <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Customer Success Reporting <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Churn Analysis <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">CARR / LARR Reporting <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">UTM Tracking <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-head"><h3 class="skill-title">Marketing &amp; Growth Analytics</h3></div>
+        <ul class="skill-list">
+          <li class="s is-proven">Demand Generation <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">SEO / AEO Analytics <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Keyword Research <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Paid Ads Attribution <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">CRO Reporting <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Campaign Performance <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Lead Source Analysis <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Website Journey Tracking <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Competitive Intelligence <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Product Marketing <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Sales Enablement <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">KPI Reporting <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-head"><h3 class="skill-title">Data Analytics &amp; BI</h3></div>
+        <ul class="skill-list">
+          <li class="s is-proven">SQL <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">MySQL <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Power BI <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">DAX <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Python <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Pandas <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Metabase <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Microsoft Excel <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s">Excel VBA</li>
+          <li class="s is-proven">Dashboard Development <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Business Intelligence <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Data Cleaning &amp; Validation <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">ETL <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Exploratory Data Analysis <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Performance Reporting <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-head"><h3 class="skill-title">Automation &amp; Integrations</h3></div>
+        <ul class="skill-list">
+          <li class="s is-proven">n8n <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Claude API <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s">Prompt Engineering</li>
+          <li class="s is-proven">HubSpot API <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">HubSpot Workflows <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Google Apps Script <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Google Sheets API <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">REST APIs <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Webhooks <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Workflow Automation <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">CRM Automation <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Reporting Automation <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+        </ul>
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-head"><h3 class="skill-title">Technical Infrastructure</h3></div>
+        <ul class="skill-list">
+          <li class="s is-proven">Docker <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Railway <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Supabase <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Vercel <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">GitHub <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">HTML <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s is-proven">Jupyter Notebook <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+          <li class="s">Microsoft Fabric</li>
+          <li class="s is-proven">Application Development <span class="skill-mark" role="img" aria-label="applied in my experience or projects">↗</span></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section projects">
+  <div class="container">
+    <div class="section-head reveal flip-in">
+      <p class="eyebrow">Work</p>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="proj-grid reveal flip-in">
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · Claude API · AI Ops</p>
+        <h3 class="proj-name">Claude API Call Scoring System</h3>
+        <p class="proj-desc">End-to-end AI pipeline: raw sales call transcript → Claude API → structured scored insight across 8 criteria. Zero manual steps. Surfaces coaching flags and objection patterns for the sales team.</p>
+        <div class="tags">
+          <span class="tag">Claude API</span><span class="tag">Python</span><span class="tag">n8n</span><span class="tag">AI Automation</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · AI · Automation</p>
+        <h3 class="proj-name">Vini Call Workflow Automation</h3>
+        <p class="proj-desc">n8n + Google Sheets workflow that automatically filters, tags, and surfaces the right call recordings for demo presentations — saving 5–6 hours per week of manual review work.</p>
+        <div class="tags">
+          <span class="tag">n8n</span><span class="tag">Google Sheets</span><span class="tag">Automation</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · Marketing Analytics</p>
+        <h3 class="proj-name">Demand Generation Analytics Dashboard</h3>
+        <p class="proj-desc">Executive dashboard monitoring SEO and AEO visibility, paid campaigns, organic traffic and inbound lead performance, using <strong>UTM tracking</strong> to attribute sources. Tracks 8 core funnel metrics from impressions through to closure ARR with monthly comparisons.</p>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">HTML</span><span class="tag">Metabase</span><span class="tag">UTM Tracking</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · CRM Analytics</p>
+        <h3 class="proj-name">HubSpot Lead Journey Analytics</h3>
+        <p class="proj-desc">Real-time CRM analytics platform visualising customer journeys and inbound lead interactions — lead sources, visited pages, lifecycle milestones and lead scores — deployed on Railway to support intent-based prioritisation.</p>
+        <div class="tags">
+          <span class="tag">HubSpot API</span><span class="tag">Railway</span><span class="tag">REST APIs</span><span class="tag">Webhooks</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · Marketing Operations</p>
+        <h3 class="proj-name">Design Request &amp; Creative Capacity System</h3>
+        <p class="proj-desc">Centralised creative operations system built end to end, tracking request lifecycle from In Progress → Review → Feedback → Completed, with visibility into production volume, pending workload and available design bandwidth.</p>
+        <div class="tags">
+          <span class="tag">Workflow Automation</span><span class="tag">Google Apps Script</span><span class="tag">Reporting Automation</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj feat reveal">
+        <p class="proj-lbl">Spyne · CEO's Office</p>
+        <h3 class="proj-name">Customer Visit &amp; Meeting Intelligence Application</h3>
+        <p class="proj-desc">Working application centralising customer visit and meeting information — which customers were visited, meeting details and discussion outcomes — giving leadership a reference for customer-facing activity.</p>
+        <div class="tags">
+          <span class="tag">Application Development</span><span class="tag">Supabase</span><span class="tag">Vercel</span>
+        </div>
+        <p class="proj-internal">Internal · Company Project</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Power BI · Hospitality Domain</p>
+        <h3 class="proj-name">Hospitality Performance Analytics</h3>
+        <p class="proj-desc">Created a Power BI dashboard for hotel performance analysis, featuring key metrics like revenue, RevPAR, ADR, and occupancy rates. Used DAX for dynamic calculations, interactive slicers, and data modeling. The dashboard provides insights into booking trends, market performance.</p>
+        <div class="tags">
+          <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Advanced Excel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/Hospitality-Domain_PowerBi" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiNDZhNmQyYTYtMzI2MC00MTkxLWEwODEtMWY0NWU0NWM3ZTgyIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" target="_blank" rel="noopener noreferrer" class="proj-link">Live Dashboard →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Power BI · Telecom</p>
+        <h3 class="proj-name">Telecom Project Insight</h3>
+        <p class="proj-desc">Led a data-driven project to evaluate Atliqo&rsquo;s performance after the 5G rollout, combining SQL analysis with Power BI to deliver strategic insights and visualizations. The dashboard highlighted a &#8377;32B revenue jump and shifts in plan-level performance.</p>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Excel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/Telecom-Domain" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiZDQzZTM1NjgtZDI4Mi00NjU4LWExMmYtZjVkODlhODQ5NDIwIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" target="_blank" rel="noopener noreferrer" class="proj-link">Live Dashboard →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Power BI · Sales</p>
+        <h3 class="proj-name">Atliq Sales-Insight</h3>
+        <p class="proj-desc">Analyzed AtliQ&rsquo;s sales data using SQL and Power BI to uncover revenue trends and identify high-performing markets and customers. Focused on profitability and performance insights across regions and product lines.</p>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Power BI</span><span class="tag">Excel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/AtliqSales-Insight-Project" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+          <a href="https://app.powerbi.com/view?r=eyJrIjoiZjRjOTUyYzAtM2UxYi00OWMyLThlNGEtYWIzNzdkNjg1Y2RiIiwidCI6ImM2ZTU0OWIzLTVmNDUtNDAzMi1hYWU5LWQ0MjQ0ZGM1YjJjNCJ9" target="_blank" rel="noopener noreferrer" class="proj-link">Live Dashboard →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">SQL · Sales</p>
+        <h3 class="proj-name">Walmart Sales Data Analysis</h3>
+        <p class="proj-desc">This project explores Walmart Sales data to analyze top-performing branches, product trends, and customer behavior. It involves data wrangling, feature engineering, and EDA to uncover insights on sales strategies, peak sales periods, customer segments, and profitability.</p>
+        <div class="tags">
+          <span class="tag">MySQL</span><span class="tag">ETL</span><span class="tag">EDA</span><span class="tag">Advanced Excel</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/WalnutSaleCaseStudy" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+          <a href="https://medium.com/@shivaniwac/walnut-sales-case-study-cea9916a12c1" target="_blank" rel="noopener noreferrer" class="proj-link">Read on Medium →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Python · Sales</p>
+        <h3 class="proj-name">Sales Product Analysis and Visualization Using Python</h3>
+        <p class="proj-desc">This project explores a Kaggle dataset using Python in Jupyter Notebook. It involves data analysis, visualization, and storytelling using libraries like Seaborn and Plotly. The workflow highlights Python&rsquo;s power in uncovering insights through exploratory data analysis and interactive visualizations.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Seaborn</span><span class="tag">Plotly</span><span class="tag">Jupyter Notebook</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/Sales-Product-Analysis" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+          <a href="https://medium.com/@shivaniwac/data-analysis-and-visualization-with-python-in-jupyter-notebook-8157ad63a07c" target="_blank" rel="noopener noreferrer" class="proj-link">Read on Medium →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Python · Social Media Analysis</p>
+        <h3 class="proj-name">YouTube Video Performance Analysis for Netflix India</h3>
+        <p class="proj-desc">This project analyzes YouTube video performance for Netflix India, identifying patterns between video attributes (duration, tags, publishing time) and viewer engagement. Insights aim to optimize content strategy for higher views, likes, and comments on the platform.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">EDA</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/YouTube-Video-Performance-Analysis-for-Netflix-India" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Python · ETL, Manipulation</p>
+        <h3 class="proj-name">Data-Manipulation-SurveyMonkey</h3>
+        <p class="proj-desc">This script processes SurveyMonkey data collected from an employee question-answer survey. The company is interested in two key metrics: respondents with non-null answers, and repeated answers by the same respondent.</p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Jupyter Notebook</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/Data-Manipulation-SurveyMonkey" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+      <article class="proj reveal">
+        <p class="proj-lbl">Excel · Sales</p>
+        <h3 class="proj-name">Sales Project | Code Basics (AtliQ) | Excel Report</h3>
+        <p class="proj-desc">Designed and developed a comprehensive sales dashboard to uncover key revenue insights and market trends. Utilizing data modeling and advanced DAX measures, the analysis identified Amazon as the top revenue driver in 2021 ($82.1M) while highlighting underperforming entities like Nova ($0.4M). India led contribution with $161M in revenue.</p>
+        <div class="tags">
+          <span class="tag">Excel</span><span class="tag">Power BI</span><span class="tag">Data Modeling</span>
+        </div>
+        <div class="proj-links">
+          <a href="https://github.com/shivaniwac/Sales_Performance_Excel-Atliq_Product-Report" target="_blank" rel="noopener noreferrer" class="proj-link">GitHub →</a>
+        </div>
+        <p class="proj-source">Challenge by CodeBasics</p>
+      </article>
+
+</div>
+
+    <p class="cb-note reveal">
+      More work on GitHub →
+      <a href="https://github.com/shivaniwac" target="_blank" rel="noopener noreferrer">github.com/shivaniwac</a>
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <p class="eyebrow">Let's Talk</p>
+      <h2 class="section-title" style="margin-bottom: 26px;">Get In Touch</h2>
+      <p class="contact-sub">Open to full-time roles in Business Analysis and Automation. Delhi-based, remote-ready. Let's build something that actually works.</p>
+    </div>
+    <div class="contact-list reveal">
+      <a href="mailto:shivaniwac@gmail.com" class="contact-row">
+        <span class="contact-row-v">shivaniwac@gmail.com</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a href="https://www.linkedin.com/in/shivaniwhachal24/" target="_blank" rel="noopener noreferrer" class="contact-row">
+        <span class="contact-row-v">LinkedIn</span>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+      <a href="Shivani_Whachal_Resume.pdf" download="Shivani_Whachal_Resume.pdf" target="_blank" rel="noopener noreferrer" class="contact-row">
+        <span class="contact-row-v">Download Resume</span>
+        <span class="arrow" aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Shivani Whachal · Delhi, India</span>
+    <span>Business Analyst | CRM &amp; Workflow Automation</span>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+
+/* Section heights are computed after load, so the browser's own scroll
+   restoration lands in the wrong place. Take control: open at the top,
+   or at the requested section once the layout has settled. */
+if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+window.addEventListener('load', function () {
+  var target = location.hash && document.querySelector(location.hash);
+  if (!target) {
+    window.scrollTo(0, 0);
+    return;
+  }
+  var tries = 0;
+  (function settle() {
+    target.scrollIntoView();
+    if (++tries < 4) { window.setTimeout(settle, 120); }
+  })();
+});
+
+(function () {
+  'use strict';
+
+  /* ---- mobile menu ---- */
+  var toggle = document.getElementById('nav-toggle');
+  var menu = document.getElementById('site-menu');
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = 'Menu';
+  }
+  function openMenu() {
+    menu.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    toggle.textContent = 'Close';
+  }
+
+  toggle.addEventListener('click', function () {
+    if (menu.classList.contains('is-open')) { closeMenu(); } else { openMenu(); }
+  });
+
+  menu.addEventListener('click', function (e) {
+    if (e.target.closest('a')) { closeMenu(); }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  var wide = window.matchMedia('(min-width: 901px)');
+  function syncMenu() { if (wide.matches) { closeMenu(); } }
+  if (wide.addEventListener) { wide.addEventListener('change', syncMenu); }
+  else if (wide.addListener) { wide.addListener(syncMenu); }
+
+  /* ---- active nav state ---- */
+  var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+  var watched = links
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  function setCurrent(id) {
+    links.forEach(function (a) {
+      if (a.getAttribute('href') === '#' + id) { a.setAttribute('aria-current', 'true'); }
+      else { a.removeAttribute('aria-current'); }
+    });
+  }
+
+  if ('IntersectionObserver' in window && watched.length) {
+    var visible = {};
+    var navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { visible[entry.target.id] = entry.isIntersecting; });
+      for (var i = 0; i < watched.length; i++) {
+        if (visible[watched[i].id]) { setCurrent(watched[i].id); return; }
+      }
+    }, { rootMargin: '-25% 0px -60% 0px', threshold: 0 });
+    watched.forEach(function (s) { navObserver.observe(s); });
+  }
+
+  /* ---- Spyne phase stack: click steps back through the roles ---- */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-phases]'), function (card) {
+    var phases = Array.prototype.slice.call(card.querySelectorAll('.phase'));
+    var dots = Array.prototype.slice.call(card.querySelectorAll('.phase-dots i'));
+    var btn = card.querySelector('.phase-cycle');
+    var deck = card.querySelector('.phase-deck');
+    if (!phases.length || !btn) { return; }
+
+    // reserve the tallest phase so the card never resizes mid-flip
+    function reserveDeck() {
+      var tallest = 0;
+      phases.forEach(function (ph) {
+        var was = ph.classList.contains('is-active');
+        ph.classList.add('is-active');
+        tallest = Math.max(tallest, ph.offsetHeight);
+        if (!was) { ph.classList.remove('is-active'); }
+      });
+      deck.style.minHeight = tallest + 'px';
+    }
+
+    var i = 0;
+    function show(n) {
+      i = (n + phases.length) % phases.length;
+      phases.forEach(function (ph, k) { ph.classList.toggle('is-active', k === i); });
+      dots.forEach(function (d, k) { d.classList.toggle('is-on', k === i); });
+    }
+    btn.addEventListener('click', function () { show(i + 1); });
+    reserveDeck();
+    show(0);
+    window.addEventListener('resize', reserveDeck);
+  });
+
+  /* ---- cinema: one entry at a time, page-turn ---- */
+  var reducedQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var cinemaQ = window.matchMedia('(min-width: 760px)');
+  var stages = [];
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cinema]'), function (sec) {
+    var track = sec.querySelector('.cinema-track');
+    var cards = Array.prototype.slice.call(sec.querySelectorAll('.cinema-card'));
+    var dots = Array.prototype.slice.call(sec.querySelectorAll('.rail-dot'));
+    var cue = sec.querySelector('.cinema-cue');
+    if (!track || cards.length < 2) {
+      // nothing to step through — leave it as a normal flowing card
+      if (track && cards.length) {
+        sec.classList.add('is-flow');
+        cards.forEach(function (c) { c.classList.add('flow-reveal', 'is-visible'); });
+        var rail = sec.querySelector('.cinema-rail');
+        var cue = sec.querySelector('.cinema-cue');
+        if (rail) { rail.remove(); }
+        if (cue) { cue.remove(); }
+      }
+      return;
+    }
+    track.style.setProperty('--count', cards.length);
+
+    var current = -1;
+    function paint(i) {
+      if (i === current) { return; }
+      current = i;
+      cards.forEach(function (c, n) {
+        c.classList.toggle('is-active', n === i);
+        c.classList.toggle('is-past', n < i);
+        c.classList.toggle('is-stack-1', n === i + 1);
+        c.classList.toggle('is-stack-2', n === i + 2);
+        c.classList.toggle('is-next', n > i + 2);
+      });
+      if (cue) { cue.classList.toggle('is-hidden', i > 0); }
+      dots.forEach(function (d, n) { d.classList.toggle('is-active', n === i); });
+    }
+    function clear() {
+      current = -1;
+      cards.forEach(function (c) {
+        c.classList.remove('is-active', 'is-past', 'is-next', 'is-stack-1', 'is-stack-2');
+        if (!sec.classList.contains('is-flow')) { c.classList.remove('flow-reveal', 'is-visible'); }
+      });
+      dots.forEach(function (d) { d.classList.remove('is-active'); });
+    }
+    function update() {
+      if (!sec.classList.contains('is-cinema')) { return; }
+      var r = track.getBoundingClientRect();
+      var span = r.height - window.innerHeight;
+      var p = span > 0 ? (-r.top) / span : 0;
+      p = Math.min(Math.max(p, 0), 0.9999);
+      paint(Math.floor(p * cards.length));
+    }
+    var cardsEl = sec.querySelector('.cinema-cards');
+    var stageEl = sec.querySelector('.cinema-stage');
+    function reserve() {
+      // measure with cinema styling applied, but cards in normal flow
+      sec.classList.add('is-measuring');
+      var tallest = 0;
+      cards.forEach(function (c) { tallest = Math.max(tallest, c.offsetHeight); });
+      sec.classList.remove('is-measuring');
+
+      function outerH(el) {
+        if (!el) { return 0; }
+        var cs = getComputedStyle(el);
+        return el.offsetHeight + (parseFloat(cs.marginTop) || 0) + (parseFloat(cs.marginBottom) || 0);
+      }
+      var stageStyle = getComputedStyle(stageEl);
+      var chrome = (parseFloat(stageStyle.paddingTop) || 0)
+        + outerH(sec.querySelector('.section-head'))
+        + outerH(sec.querySelector('.cinema-rail'))
+        + outerH(sec.querySelector('.cinema-cue'))
+        + 12;
+
+      var vh = window.innerHeight;
+      var needed = chrome + tallest + 36;
+
+      // Pinning only pays for itself when the cards fill a decent share of the
+      // screen. Short cards stranded in a tall stage read as dead space.
+      if (needed > vh || tallest < vh * 0.3) { return false; }
+
+      // Size the stage to the content instead of the full viewport, so a short
+      // deck doesn't leave a screen of emptiness above and below it.
+      var stageH = Math.min(vh, Math.max(needed, vh * 0.6));
+      stageEl.style.setProperty('--stage-h', stageH + 'px');
+      cardsEl.style.minHeight = (tallest + 36) + 'px';
+      track.style.height = Math.round(cards.length * stageH * 0.6 + stageH * 0.3) + 'px';
+      return true;
+    }
+
+    var flowObserver = null;
+    function flowReveal() {
+      if (reducedQ.matches || !('IntersectionObserver' in window)) {
+        cards.forEach(function (c) { c.classList.add('flow-reveal', 'is-visible'); });
+        return;
+      }
+      if (flowObserver) { flowObserver.disconnect(); }
+      flowObserver = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+      cards.forEach(function (c) {
+        c.classList.add('flow-reveal');
+        if (c.getBoundingClientRect().top < window.innerHeight) { c.classList.add('is-visible'); }
+        else { flowObserver.observe(c); }
+      });
+    }
+    stages.push({ el: sec, update: update, clear: clear, reserve: reserve, flowReveal: flowReveal });
+  });
+
+  function syncCinema() {
+    var on = cinemaQ.matches && !reducedQ.matches;
+    stages.forEach(function (st) {
+      st.el.classList.remove('is-cinema', 'is-flow');
+      st.el.querySelector('.cinema-cards').style.minHeight = '';
+      st.el.querySelector('.cinema-track').style.height = '';
+      st.clear();
+
+      if (on) {
+        st.el.classList.add('is-cinema');
+        if (st.reserve()) { st.update(); return; }
+        // longest page cannot fit the pinned stage — don't hide content
+        st.el.classList.remove('is-cinema');
+        st.el.querySelector('.cinema-cards').style.minHeight = '';
+        st.el.querySelector('.cinema-track').style.height = '';
+      }
+      st.el.classList.add('is-flow');
+      st.flowReveal();
+    });
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) { return; }
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      stages.forEach(function (st) { st.update(); });
+      ticking = false;
+    });
+  }
+
+  if (stages.length) {
+    syncCinema();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', function () { syncCinema(); onScroll(); });
+    [cinemaQ, reducedQ].forEach(function (q) {
+      if (q.addEventListener) { q.addEventListener('change', syncCinema); }
+      else if (q.addListener) { q.addListener(syncCinema); }
+    });
+  }
+
+  /* ---- reveal on scroll ---- */
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealables = document.querySelectorAll('.reveal');
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    Array.prototype.forEach.call(revealables, function (el) { el.classList.add('is-visible'); });
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    Array.prototype.forEach.call(revealables, function (el) { revealObserver.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>
